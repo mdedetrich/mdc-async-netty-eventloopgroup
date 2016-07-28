@@ -19,7 +19,7 @@ public class MDCEventLoopGroup implements EventLoopGroup {
     private Map<String, String> mdcContext;
     private EventLoopGroup delegate;
 
-    public final EventLoopGroup fromThread(EventLoopGroup delegate) {
+    public static EventLoopGroup fromThread(EventLoopGroup delegate) {
         return new MDCEventLoopGroup(MDC.getCopyOfContextMap(), delegate);
     }
 
